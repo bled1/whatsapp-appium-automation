@@ -4,15 +4,14 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import io.appium.java_client.windows.WindowsDriver;
 
-public class CalculatorTest {
+public class WhatsappAutoMessageApp {
   private static WindowsDriver driver = null;
-  public static void main(String[] args) throws IOException, InterruptedException {
+  public static void main(String[] args) throws IOException {
 
     //Runtime.getRuntime().exec("C:\\Program Files\\Windows Application Driver\\WinAppDriver.exe", null, new File("C:\\Program Files\\Windows Application Driver"));
 
@@ -25,13 +24,13 @@ public class CalculatorTest {
     driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     //AutomationId	SearchQueryTextBoxvAutomationId	TitleAutomationId	TextBoxAutomationId	RightButton
 
-    driver.findElementByAccessibilityId("SearchQueryTextBox").sendKeys("ard");
+    driver.findElementByAccessibilityId("SearchQueryTextBox").sendKeys("dishepujt");
     driver.findElementByAccessibilityId("Title").click();
     driver.findElementByAccessibilityId("TextBox").sendKeys(GetQuotes.getRandomQuote());
     driver.findElementByAccessibilityId("RightButton").click();
 
     Runtime.getRuntime().exec("taskkill /F /IM WinAppDriver.exe");
-    driver.quit();
-    Thread.sleep(10000);
+    //driver.quit();
+
   }
 }
